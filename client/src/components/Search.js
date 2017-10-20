@@ -45,13 +45,8 @@ class Search extends Component {
           Search
           <input
             type='text'
-            onChange={(e) => this.setState({ searchText: e.target.value })}
+            onChange={(e) => this._executeSearch(e.target.value)}
           />
-          <button
-            onClick={() => this._executeSearch()}
-          >
-            OK
-          </button>
         </div>
         <div className="pa3 pa5-ns">
           <ul className="list pl0 measure center">
@@ -64,14 +59,13 @@ class Search extends Component {
     )
   }
 
-  _executeSearch = async () => {
-    const { searchText } = this.state
+  _executeSearch = async (searchText) => {
+    // const { searchText } = this.state
     const result = await this.props.client.query({
       query: SEARCH_QUERY,
       variables: { searchText }
     })
     const searchResults = result.data.search
-    console.log(searchResults)
     this.setState({ searchResults })
   }
 
