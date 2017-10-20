@@ -1,0 +1,37 @@
+{
+  "name": "onerent-challenge-client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "apollo-client": "^1.1.1",
+    "apollo-test-utils": "^0.1.1",
+    "false": "0.0.4",
+    "graphql": "^0.10.1",
+    "graphql-tools": "^0.10.0",
+    "react": "^15.4.2",
+    "react-apollo": "^1.1.2",
+    "react-dom": "^15.4.2",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.0.0",
+    "tachyons-font-weight": "^5.0.4",
+    "tachyons-line-height": "^3.0.6",
+    "tachyons-max-widths": "^4.0.5",
+    "tachyons-overflow": "^4.0.5",
+    "tachyons-skins": "^4.1.0",
+    "tachyons-spacing": "^6.0.4",
+    "tachyons-tables": "^1.0.7",
+    "tachyons-text-align": "^3.1.0",
+    "tachyons-type-scale": "^6.1.0",
+    "tachyons-utilities": "^2.0.1",
+    "tachyons-widths": "^5.2.1"
+  },
+  "devDependencies": {
+    "react-scripts": "0.9.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
