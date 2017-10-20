@@ -28,7 +28,7 @@ PropertyModel.belongsTo(UserModel);
 // create mock data using casual with a seed, so we store the same data on our sqlite database
 casual.seed(123);
 db.sync({ force: true }).then(() => {
-  _.times(10, () => {
+  _.times(100, () => {
     return UserModel.create({
       firstName: casual.first_name,
       lastName: casual.last_name,
