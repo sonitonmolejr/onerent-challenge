@@ -13,7 +13,7 @@ class Header extends Component {
           <div className='ml1'>|</div>
           <Link to='/properties' className='ml1 no-underline black'>properties</Link>
           <div className='ml1'>|</div>
-          <Link to='/' className='ml1 no-underline black'>search</Link>
+          <Link to='/search' className='ml1 no-underline black'>search</Link>
         </div>
       </div>
     )

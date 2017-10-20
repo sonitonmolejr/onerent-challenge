@@ -16,7 +16,7 @@ import {
 import Header from './components/Header';
 import UserList from './components/UserList';
 import PropertyList from './components/PropertyList';
-
+import Search from './components/Search';
 
 const networkInterface = createNetworkInterface({ uri: 'http://localhost:4000/graphql' });
 networkInterface.use([{
@@ -25,7 +25,14 @@ networkInterface.use([{
   },
 }]);
 
+import { IntrospectionFragmentMatcher } from 'apollo-client';
+import introspectionQueryResultData from '../../fragmentTypes.json';
+const fragmentMatcher = new IntrospectionFragmentMatcher({
+  introspectionQueryResultData
+});
+
 const client = new ApolloClient({
+  fragmentMatcher,
   networkInterface
 });
 
@@ -40,6 +47,7 @@ class App extends Component {
             <Switch>
               <Route exact path='/users' component={UserList}/>
               <Route exact path='/properties' component={PropertyList}/>
+              <Route exact path='/search' component={Search}/>
             </Switch>
           </div>
         </div>

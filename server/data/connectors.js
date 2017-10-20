@@ -46,14 +46,27 @@ db.sync({ force: true }).then(() => {
   UserModel.create({
     firstName: 'Edmond',
     lastName: 'Michaels',
+  }).then((user) => {
+    user.createProperty({
+      street: 'Liza Route',
+      city: 'Davao City',
+      state: 'Davao del Sur',
+      zip: '8000',
+      rent: 9000,
+    });
+
+    user.createProperty({
+      street: 'Edmond',
+      city: 'Manila',
+      state: 'Manila',
+      zip: '8000',
+      rent: 9000,
+    });
   });
 
-  PropertyModel.create({
-    street: 'Liza Route',
-    city: 'Davao City',
-    state: 'Davao del Sur',
-    zip: '8000',
-    rent: 9000,
+  UserModel.create({
+    firstName: 'Edmond',
+    lastName: 'Freecs',
   });
 });
 
