@@ -5,6 +5,7 @@
   "dependencies": {
     "apollo-client": "^1.9.3",
     "apollo-test-utils": "^0.1.1",
+    "downshift": "^1.14.0",
     "false": "0.0.4",
     "graphql": "^0.10.1",
     "graphql-tools": "^0.10.0",
