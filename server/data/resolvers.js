@@ -18,12 +18,35 @@ const resolvers = {
       // TODO: Use contains and or operations
       return User.findAll({
         where: {
-          firstName: args.q,
+          $or: [
+            { firstName: Sequelize.where(
+              Sequelize.fn('LOWER', Sequelize.col('firstName')
+            ), 'LIKE', '%' + args.q + '%') },
+            { lastName: Sequelize.where(
+              Sequelize.fn('LOWER', Sequelize.col('lastName')
+            ), 'LIKE', '%' + args.q + '%') },
+          ],
         },
       }).then((userResults) => {
         return Property.findAll({
           where: {
-            street: args.q,
+            $or: [
+              { street: Sequelize.where(
+                Sequelize.fn('LOWER', Sequelize.col('street')
+              ), 'LIKE', '%' + args.q + '%') },
+              { city: Sequelize.where(
+                Sequelize.fn('LOWER', Sequelize.col('city')
+              ), 'LIKE', '%' + args.q + '%') },
+              { state: Sequelize.where(
+                Sequelize.fn('LOWER', Sequelize.col('state')
+              ), 'LIKE', '%' + args.q + '%') },
+              { zip: Sequelize.where(
+                Sequelize.fn('LOWER', Sequelize.col('zip')
+              ), 'LIKE', '%' + args.q + '%') },
+              { rent: Sequelize.where(
+                Sequelize.fn('LOWER', Sequelize.col('rent')
+              ), 'LIKE', '%' + args.q + '%') },
+            ],
           },
         }).then((propertyResults) => {
           const searchResults = userResults.concat(propertyResults);
